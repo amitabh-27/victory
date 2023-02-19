@@ -5,7 +5,7 @@ dotenv.config();
 // Connect with MongoDB using mongoose at default port 27017
 
 mongoose.connect(
-  process.env.DB_URl,
+  "mongodb://127.0.0.1:27017/victory",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -14,7 +14,6 @@ mongoose.connect(
     if (err) {
       console.log(`Failed to connect to the database. ${err.stack}`);
     } else {
-      console.log(process.env.DB_URl);
       console.log('MongoDB Connected.')
     }
   }

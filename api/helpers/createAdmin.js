@@ -6,7 +6,7 @@ const schema=require('../app/authservices/model/userModel')
 // Connect with MongoDB using mongoose at default port 27017
 
 mongoose.connect(
-  process.env.DB_URl,
+  "mongodb://127.0.0.1:27017/victory",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -14,11 +14,11 @@ mongoose.connect(
 
  async function create(){
      let payload=({
-      full_name : process.env.FULLNAME,
-         email:process.env.ADMIN_EMAIL,
-         roleId : 1,
-         password:await bcrypt.hash(process.env.ADMIN_PWD,parseInt(process.env.SALT_ROUNDS)),
-     })
+        full_name : "Admin",
+        email: "admin@victory.in",
+        roleId : 1,
+        password:await bcrypt.hash("Admin@123",parseInt(10)),
+      })
      
 
      let save=await schema(payload).save()

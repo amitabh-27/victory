@@ -89,7 +89,7 @@ _user.login = async(req,res,next) =>{
           _id: findUser._id,
           roleId: findUser.roleId,
         };
-        var token = jwt.sign(token_Data, process.env.SECRET);
+        var token = jwt.sign(token_Data, "*$#@!^*");
         res.json({
           success: true,
           token: token,
@@ -186,7 +186,7 @@ _user.updateClientInfo = async (req, res, next) => {
 
       data.password = await bcrypt.hash(
         data.password,
-        parseInt(process.env.SALT_ROUNDS)
+        parseInt(10)
       );
     }
 
@@ -232,7 +232,7 @@ _user.addClient = async(req,res,next) => {
       //encrypt password
       let hash = await bcrypt.hash(
         payloadData.password,
-        parseInt(process.env.SALT_ROUNDS)
+        parseInt(10)
       );
       const saveData = await new USER(payloadData).save();
       if (saveData) {

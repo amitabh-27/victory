@@ -9,7 +9,7 @@ const getRandomEmail = require("../middleware/commonFunction").getRandomEmail
 // Connect with MongoDB using mongoose at default port 27017
 
 mongoose.connect(
-  process.env.DB_URl,
+  "mongodb://127.0.0.1:27017/victory",
   {
     useNewUrlParser: true,
     useUnifiedTopology: true,
@@ -20,8 +20,8 @@ mongoose.connect(
      
         let payload=({
             fullName : getRandomName(6),
-            email:getRandomEmail(6) + i + "@gmail.com",
-            password:await bcrypt.hash(process.env.DEMO_PWD,parseInt(process.env.SALT_ROUNDS)),
+            email:getRandomEmail(6) + i + "@victory.in",
+            password:await bcrypt.hash("victory@123",parseInt(10)),
             
         })
    

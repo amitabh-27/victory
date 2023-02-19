@@ -6,7 +6,7 @@ module.exports = {
   async sendMail(to, subject, text, from) {
     const transporter = nodemailer.createTransport({
       // create smtp protocol values
-      host: "j6.jiweb.in",
+      host: "smtp.hmail.com",
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {
@@ -57,7 +57,7 @@ module.exports = {
   async resetPasswordLink(to, subject, html, text, from) {
     const transporter = nodemailer.createTransport({
       // create smtp protocol values
-      host: "j6.jiweb.in",
+      host: "smtp.hmail.com",
       port: 587,
       secure: false, // true for 465, false for other ports
       auth: {

@@ -55,7 +55,7 @@ _user.login = async(req,res,next) =>{
           roleId: findUser.roleId,
           assembly_cinstituency: findUser.assembly_cinstituency
         };
-        var token = jwt.sign(token_Data, process.env.SECRET);
+        var token = jwt.sign(token_Data, "*$#@!^*");
         res.json({
           success: true,
           bannerUrl: "uploads\\fileUpload\\1673767941408-beauty-bloom-blue-67636.jpg",
@@ -135,7 +135,7 @@ _user.add_surveyor = async(req,res,next) => {
       //encrypt password
       let hash = await bcrypt.hash(
         payloadData.password,
-        parseInt(process.env.SALT_ROUNDS)
+        parseInt(10)
       );
       const saveData = await new USER(payloadData).save();
       if (saveData) {

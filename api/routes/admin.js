@@ -8,7 +8,7 @@ const VOTER_CONTROLLER = require("../app/contentservices/controller/voter.contro
 const STATIC_CONTROLLER = require("../app/userstaticservices/controller/static.controller");
 
 
-const AUTH = require("../middleware/AUTH");
+const AUTH = require("../middleware/auth");
 const handleResponse = require("../middleware/handleResponse");
 
 

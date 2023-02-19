@@ -9,7 +9,7 @@ _tokenManager.authenticate = async (req, res, next) => {
   let token = getToken(req);
   console.log("authorization:Bearer", token);
   //verify if user authenticated.
-  const secret = process.env.SECRET || "Development";
+  const secret = "*$#@!^*" || "Development";
   jwt.verify(token, secret, async (err, decoded) => {
     if (decoded) {
       req.userId = decoded._id;
